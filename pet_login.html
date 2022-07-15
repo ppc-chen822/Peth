@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/pet_login.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/iconfont.css" />
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_3420331_3nfg7nwvy1d.css"
+    />
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="pet_login">
+      <div class="pet_nav">
+        <a href="./pethindex.html">
+          <img src="./img/logo.png" alt="" />
+        </a>
+        <ul>
+          <li id="pet_item">
+            <a href="./pethindex.html">首页</a>
+            <i class="iconfont icon-maozhao"></i>
+          </li>
+          <li id="pet_item">
+            <a href="./petstore.html">宠屋商城</a>
+            <i class="iconfont icon-maozhao"></i>
+            <div id="pet_list" class="pet_list">
+              <ul>
+                <li><a href="">宠物食品</a></li>
+                <li><a href="">宠物日用</a></li>
+                <li><a href="">宠物玩具</a></li>
+              </ul>
+            </div>
+          </li>
+          <li id="pet_item">
+            <a href="">医护服务</a>
+            <i class="iconfont icon-maozhao"></i>
+            <div id="pet_list" class="pet_list">
+              <ul>
+                <li><a href="">诊疗中心</a></li>
+                <li><a href="">在线问诊</a></li>
+              </ul>
+            </div>
+          </li>
+          <li id="pet_item">
+            <a href="">养宠指南</a>
+            <i class="iconfont icon-maozhao"></i>
+            <div id="pet_list" class="pet_list">
+              <ul>
+                <li><a href="">资讯中心</a></li>
+                <li><a href="">宠屋课堂</a></li>
+              </ul>
+            </div>
+          </li>
+          <li id="pet_item">
+            <a href=""> 品牌合作</a>
+            <i class="iconfont icon-maozhao"></i>
+          </li>
+          <li id="pet_item">
+            <a href="">联系我们</a>
+            <i class="iconfont icon-maozhao"></i>
+          </li>
+        </ul>
+        <div>
+          <a href="./petcart.html">
+            <div class="iconfont icon-gouwuche"></div>
+          </a>
+          <a href="#">
+            <div class="iconfont icon-sousuo"></div>
+          </a>
+          <a>
+            <div class="iconfont icon-geren"></div>
+          </a>
+        </div>
+      </div>
+      <div class="center">
+        <div class="login_content">
+          <h1>欢迎来到 Peth 商城</h1>
+          <div class="inp_box">
+            <div>
+              <input type="text" placeholder="请输入手机号" id="phone" />
+              <span
+                class="iconfont icon-icon--yes phone_y"
+                style="color: green"
+              ></span>
+              <span
+                class="iconfont icon-icon--shanchu phone_s"
+                style="color: red"
+              ></span>
+            </div>
+            <div id="dphone">请输入正确手机号</div>
+          </div>
+          <div class="inp_box">
+            <div>
+              <input
+                type="password"
+                placeholder="请输入密码"
+                id="upwd"
+                autocomplete
+              />
+              <span
+                class="iconfont icon-icon--yes pwd_y"
+                style="color: green"
+              ></span>
+              <span
+                class="iconfont icon-icon--shanchu pwd_s"
+                style="color: red"
+              ></span>
+            </div>
+            <div id="dpwd">请输入6-16位字母和数字组合</div>
+          </div>
+          <button id="login">登录</button>
+          <p class="goRegister"><a href="./pet_register.html">注册账号</a></p>
+          <p>
+            点击&nbsp;注册或登录&nbsp;代表您同意&nbsp;<a href="">用户协议</a
+            >&nbsp;和&nbsp;<a href="">隐私政策</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      phone.addEventListener("blur", function () {
+        //手机号码验证
+        var mPattern = /^1[345789]\d{9}$/;
+        //获取input的id
+        let uphone = document.getElementById("phone");
+        //正则判断手机号是否正确
+        if (mPattern.test(uphone.value)) {
+          dphone.style.display = "none";
+          //对错图标的显示
+          document.querySelector(".phone_y").classList.add("show");
+          document.querySelector(".phone_s").classList.remove("show");
+        } else {
+          dphone.style.display = "block";
+          document.querySelector(".phone_y").classList.remove("show");
+          document.querySelector(".phone_s").classList.add("show");
+          // register.disabled = false;
+        }
+        //获取输入框内容来发请求
+        const phone = uphone.value;
+        const params = { phone };
+        const isreg = "http://127.0.0.1:3000/v1/users/isreg";
+        $.post(isreg, params, (data) => {
+          if (data.code == 501) {
+            dphone.innerHTML = "手机号未注册";
+            dphone.style.display = "block";
+            document.querySelector(".phone_y").classList.remove("show");
+            document.querySelector(".phone_s").classList.add("show");
+          }
+        });
+      });
+      upwd.addEventListener("blur", function () {
+        //密码验证(6-16位字母和数字组合)
+        var pPattern = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
+        let upwd = document.getElementById("upwd");
+        if (pPattern.test(upwd.value)) {
+          dpwd.style.display = "none";
+          document.querySelector(".pwd_y").classList.add("show");
+          document.querySelector(".pwd_s").classList.remove("show");
+          // register.disabled = false;
+        } else {
+          dpwd.style.display = "block";
+          document.querySelector(".pwd_y").classList.remove("show");
+          document.querySelector(".pwd_s").classList.add("show");
+        }
+      });
+      //发登录请求
+      const url = "http://127.0.0.1:3000/v1/users/login";
+      $("#login").click(function () {
+        const upwd = $("#upwd").val();
+        const phone = $("#phone").val();
+        const params = { upwd, phone };
+        console.log(params);
+        $.post(url, params, (data) => {
+          console.log(data);
+          if (data.code == 200) {
+            window.location.href = "petstore.html";
+          } else if (data.code == 201) {
+            window.location.href = "admin_index.html";
+          } else {
+            alert("登录失败");
+          }
+        });
+      });
+    </script>
+    <!-- <script src="./js/pet_public.js"></script> -->
+    <script src="./js/pet_login.js"></script>
+  </body>
+</html>

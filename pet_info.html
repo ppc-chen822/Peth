@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/pet_info.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_3420331_3nfg7nwvy1d.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="pet_info">
+      <div class="pet_nav">
+        <a href="./pethindex.html">
+          <img src="./img/logo.png" alt="" />
+        </a>
+        <ul>
+          <li id="pet_item">
+            <a href="./pethindex.html">首页</a>
+            <i class="iconfont icon-maozhao"></i>
+          </li>
+          <li id="pet_item">
+            <a href="./petstore.html">宠屋商城</a>
+            <i class="iconfont icon-maozhao"></i>
+            <div id="pet_list" class="pet_list">
+              <ul>
+                <li><a href="">宠物食品</a></li>
+                <li><a href="">宠物日用</a></li>
+                <li><a href="">宠物玩具</a></li>
+              </ul>
+            </div>
+          </li>
+          <li id="pet_item">
+            <a href="">医护服务</a>
+            <i class="iconfont icon-maozhao"></i>
+            <div id="pet_list" class="pet_list">
+              <ul>
+                <li><a href="">诊疗中心</a></li>
+                <li><a href="">在线问诊</a></li>
+              </ul>
+            </div>
+          </li>
+          <li id="pet_item">
+            <a href="">养宠指南</a>
+            <i class="iconfont icon-maozhao"></i>
+            <div id="pet_list" class="pet_list">
+              <ul>
+                <li><a href="">资讯中心</a></li>
+                <li><a href="">宠屋课堂</a></li>
+              </ul>
+            </div>
+          </li>
+          <li id="pet_item">
+            <a href=""> 品牌合作</a>
+            <i class="iconfont icon-maozhao"></i>
+          </li>
+          <li id="pet_item">
+            <a href="">联系我们</a>
+            <i class="iconfont icon-maozhao"></i>
+          </li>
+        </ul>
+        <div>
+          <a href="./petcart.html">
+            <div class="iconfont icon-gouwuche"></div>
+          </a>
+          <a href="#">
+            <div class="iconfont icon-sousuo"></div>
+          </a>
+          <a id="login">
+            <div class="iconfont icon-geren"></div>
+          </a>
+        </div>
+      </div>
+      <div class="center">
+        <div class="info" id="app">
+          <div class="info_left">
+            <div class="info_account">
+              <div class="account_th well">账号管理</div>
+              <ul class="list">
+                <li>
+                  <!-- <a>个人中心</a> -->
+                  <router-link to="/index">个人中心</router-link>
+                </li>
+
+                <li>
+                  <!-- <a>消息通知</a> -->
+                  <router-link to="/message">消息通知</router-link>
+                </li>
+                <li>
+                  <router-link to="/account">账号信息</router-link>
+                </li>
+                <li>
+                  <router-link to="/address">地址管理</router-link>
+                </li>
+              </ul>
+              <div class="order_th well">交易管理</div>
+              <ul class="list">
+                <li>
+                  <router-link to="/order">订单管理</router-link>
+                </li>
+              </ul>
+            </div>
+            <div class="info_trading"></div>
+          </div>
+          <div class="info_right">
+            <router-view></router-view>
+          </div>
+        </div>
+      </div>
+    </div>
+    <template id="index">
+      <div class="index">
+        <div class="index_top">
+          <div class="image"></div>
+          <span>皮皮陈</span>
+        </div>
+        <div class="index_bottom">
+          <div class="bottom_title">
+            <span>未完成订单</span>
+            <span><a href="">查看全部订单</a></span>
+          </div>
+          <div class="bottom_content"></div>
+        </div>
+      </div>
+    </template>
+    <template id="message">
+      <div class="message">
+        <div class="message_tab">
+          <ul>
+            <li class="active">商城活动</li>
+            <li>我的资产</li>
+            <li>通知消息</li>
+            <li>物流助手</li>
+            <li>互动消息</li>
+          </ul>
+        </div>
+      </div>
+    </template>
+    <template id="account">
+      <div>我是账户</div>
+    </template>
+    <template id="address">
+      <div>我是地址</div>
+    </template>
+    <template id="order">
+      <div>我是订单</div>
+    </template>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-router.js"></script>
+    <script type="module">
+      var Index = Vue.extend({
+        template: "#index",
+      });
+      var Message = Vue.extend({
+        template: "#message",
+      });
+      var Account = Vue.extend({
+        template: "#account",
+      });
+      var Address = Vue.extend({
+        template: "#address",
+      });
+      var Order = Vue.extend({
+        template: "#order",
+      });
+      const routes = [
+        { path: "/index", component: Index },
+        { path: "/message", component: Message },
+        { path: "/account", component: Account },
+        { path: "/address", component: Address },
+        { path: "/order", component: Order },
+        { path: "/", redirect: "/index" },
+      ];
+      const router = new VueRouter({
+        routes, // （缩写）相当于 routes: routes
+      });
+
+      const app = new Vue({
+        router,
+        created() {
+          if (this.$router.history.current.path !== "/index") {
+            this.$router.replace("/index");
+          }
+        },
+      }).$mount("#app");
+    </script>
+  </body>
+</html>

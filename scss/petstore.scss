@@ -1,0 +1,120 @@
+.center {
+  position: relative;
+  top: 100px;
+  width: 1090px;
+  margin: 0 auto;
+  background-color: #fff;
+  > .store_banner {
+    > .store_title {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 20px;
+      h1 {
+        font-size: 28px;
+        font-weight: bold;
+      }
+      ul {
+        display: flex;
+        li {
+          display: flex;
+          align-items: center;
+          a {
+            color: #000;
+          }
+          &:not(:last-child)::after {
+            content: "/";
+            display: block;
+            padding: 0 8px;
+          }
+        }
+      }
+    }
+    > .store_banner_img {
+      img {
+        width: 100%;
+        height: 310px;
+      }
+    }
+  }
+  > .store_first_floor,
+  .store_second_floor {
+    padding-top: 30px;
+    box-sizing: border-box;
+    > .first_floor_title,
+    .second_floor_title {
+      height: 75px;
+      text-align: center;
+      margin-bottom: 40px;
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 40px;
+      }
+      p {
+        font-size: 14px;
+        color: #999;
+        line-height: 35px;
+      }
+    }
+    > .first_floor_content,
+    .second_floor_content {
+      > .pet_product_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        > .cat_list {
+          width: 245px;
+          height: 400px;
+          border-radius: 8px;
+          background-color: #f4f4f4;
+          margin-bottom: 50px;
+          > a {
+            > img {
+              display: block;
+              border-radius: 8px;
+              width: 245px;
+              height: 245px;
+            }
+          }
+          > div {
+            width: 245px;
+            height: 155px;
+            box-sizing: border-box;
+            text-align: center;
+            > a {
+              font-size: 14px;
+              font-weight: bold;
+              color: #000;
+              h4 {
+                padding: 30px 35px 10px 35px;
+              }
+            }
+            span {
+              text-align: center;
+              font-size: 13px;
+              color: red;
+            }
+            > hr {
+              display: block;
+              width: 130px;
+              height: 1px;
+              padding: 0;
+              border: 0;
+              border-top: 1px solid #e8e8e8;
+            }
+            > div {
+              p {
+                font-size: 13px;
+                color: #999;
+                padding: 10px 30px 10px 30px;
+              }
+            }
+          }
+          &:hover {
+            box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+  }
+}

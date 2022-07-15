@@ -1,0 +1,81 @@
+.center {
+  position: relative;
+  top: 0px;
+  width: 1090px;
+  margin: 0 auto;
+}
+.center > .login_content {
+  padding-top: 20vh;
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.center > .login_content > h1 {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.center > .login_content .inp_box > div:first-child {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #e5e7eb;
+  background-color: #eeeeee;
+  margin-top: 15px;
+  padding: 0 10px;
+}
+.center > .login_content .inp_box > div:first-child > input {
+  font-size: 14px;
+  width: 374px;
+  height: 45px;
+  outline: none;
+  border: none;
+  background-color: #eeeeee;
+}
+.center > .login_content .inp_box > div:first-child > span {
+  display: none;
+}
+.center > .login_content .inp_box > div:first-child .show {
+  display: block;
+}
+.center > .login_content .inp_box > div:last-child {
+  display: none;
+  margin-top: 10px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: red;
+}
+.center > .login_content .isFalse {
+  border: 1px solid rgb(255, 0, 0);
+}
+.center > .login_content button {
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #e5e7eb;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #b3b3b3;
+  margin-top: 20px;
+}
+.center > .login_content > .goRegister {
+  font-size: 16px;
+  padding: 10px 0;
+}
+.center > .login_content > p {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #828282;
+}
+.center > .login_content > p a {
+  color: #000;
+}
+
+/*# sourceMappingURL=pet_login.css.map */

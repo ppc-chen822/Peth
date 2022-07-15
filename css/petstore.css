@@ -1,0 +1,149 @@
+.center {
+  position: relative;
+  top: 100px;
+  width: 1090px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.center > .store_banner > .store_title {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+.center > .store_banner > .store_title h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+.center > .store_banner > .store_title ul {
+  display: flex;
+}
+.center > .store_banner > .store_title ul li {
+  display: flex;
+  align-items: center;
+}
+.center > .store_banner > .store_title ul li a {
+  color: #000;
+}
+.center > .store_banner > .store_title ul li:not(:last-child)::after {
+  content: "/";
+  display: block;
+  padding: 0 8px;
+}
+.center > .store_banner > .store_banner_img img {
+  width: 100%;
+  height: 310px;
+}
+.center > .store_first_floor,
+.center .store_second_floor {
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+.center > .store_first_floor > .first_floor_title,
+.center > .store_first_floor .second_floor_title,
+.center .store_second_floor > .first_floor_title,
+.center .store_second_floor .second_floor_title {
+  height: 75px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.center > .store_first_floor > .first_floor_title h1,
+.center > .store_first_floor .second_floor_title h1,
+.center .store_second_floor > .first_floor_title h1,
+.center .store_second_floor .second_floor_title h1 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 40px;
+}
+.center > .store_first_floor > .first_floor_title p,
+.center > .store_first_floor .second_floor_title p,
+.center .store_second_floor > .first_floor_title p,
+.center .store_second_floor .second_floor_title p {
+  font-size: 14px;
+  color: #999;
+  line-height: 35px;
+}
+.center > .store_first_floor > .first_floor_content > .pet_product_list,
+.center > .store_first_floor .second_floor_content > .pet_product_list,
+.center .store_second_floor > .first_floor_content > .pet_product_list,
+.center .store_second_floor .second_floor_content > .pet_product_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.center > .store_first_floor > .first_floor_content > .pet_product_list > .cat_list,
+.center > .store_first_floor .second_floor_content > .pet_product_list > .cat_list,
+.center .store_second_floor > .first_floor_content > .pet_product_list > .cat_list,
+.center .store_second_floor .second_floor_content > .pet_product_list > .cat_list {
+  width: 245px;
+  height: 400px;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  margin-bottom: 50px;
+}
+.center > .store_first_floor > .first_floor_content > .pet_product_list > .cat_list > a > img,
+.center > .store_first_floor .second_floor_content > .pet_product_list > .cat_list > a > img,
+.center .store_second_floor > .first_floor_content > .pet_product_list > .cat_list > a > img,
+.center .store_second_floor .second_floor_content > .pet_product_list > .cat_list > a > img {
+  display: block;
+  border-radius: 8px;
+  width: 245px;
+  height: 245px;
+}
+.center > .store_first_floor > .first_floor_content > .pet_product_list > .cat_list > div,
+.center > .store_first_floor .second_floor_content > .pet_product_list > .cat_list > div,
+.center .store_second_floor > .first_floor_content > .pet_product_list > .cat_list > div,
+.center .store_second_floor .second_floor_content > .pet_product_list > .cat_list > div {
+  width: 245px;
+  height: 155px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.center > .store_first_floor > .first_floor_content > .pet_product_list > .cat_list > div > a,
+.center > .store_first_floor .second_floor_content > .pet_product_list > .cat_list > div > a,
+.center .store_second_floor > .first_floor_content > .pet_product_list > .cat_list > div > a,
+.center .store_second_floor .second_floor_content > .pet_product_list > .cat_list > div > a {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+.center > .store_first_floor > .first_floor_content > .pet_product_list > .cat_list > div > a h4,
+.center > .store_first_floor .second_floor_content > .pet_product_list > .cat_list > div > a h4,
+.center .store_second_floor > .first_floor_content > .pet_product_list > .cat_list > div > a h4,
+.center .store_second_floor .second_floor_content > .pet_product_list > .cat_list > div > a h4 {
+  padding: 30px 35px 10px 35px;
+}
+.center > .store_first_floor > .first_floor_content > .pet_product_list > .cat_list > div span,
+.center > .store_first_floor .second_floor_content > .pet_product_list > .cat_list > div span,
+.center .store_second_floor > .first_floor_content > .pet_product_list > .cat_list > div span,
+.center .store_second_floor .second_floor_content > .pet_product_list > .cat_list > div span {
+  text-align: center;
+  font-size: 13px;
+  color: red;
+}
+.center > .store_first_floor > .first_floor_content > .pet_product_list > .cat_list > div > hr,
+.center > .store_first_floor .second_floor_content > .pet_product_list > .cat_list > div > hr,
+.center .store_second_floor > .first_floor_content > .pet_product_list > .cat_list > div > hr,
+.center .store_second_floor .second_floor_content > .pet_product_list > .cat_list > div > hr {
+  display: block;
+  width: 130px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #e8e8e8;
+}
+.center > .store_first_floor > .first_floor_content > .pet_product_list > .cat_list > div > div p,
+.center > .store_first_floor .second_floor_content > .pet_product_list > .cat_list > div > div p,
+.center .store_second_floor > .first_floor_content > .pet_product_list > .cat_list > div > div p,
+.center .store_second_floor .second_floor_content > .pet_product_list > .cat_list > div > div p {
+  font-size: 13px;
+  color: #999;
+  padding: 10px 30px 10px 30px;
+}
+.center > .store_first_floor > .first_floor_content > .pet_product_list > .cat_list:hover,
+.center > .store_first_floor .second_floor_content > .pet_product_list > .cat_list:hover,
+.center .store_second_floor > .first_floor_content > .pet_product_list > .cat_list:hover,
+.center .store_second_floor .second_floor_content > .pet_product_list > .cat_list:hover {
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*# sourceMappingURL=petstore.css.map */
